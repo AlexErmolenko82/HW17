@@ -1,0 +1,30 @@
+.container {
+    max-width: 800px;
+    padding-top: 20px;
+    font-size: 1.1em;
+
+    
+}
+
+.markedItem {
+    text-decoration: line-through;
+}
+
+.error {
+    background-color: red;
+}
+
+form {
+    height: 40px;
+}
+
+.bi-trash {
+    pointer-events: none;
+}
+
+li input, li button{
+    display: inline-block;
+    justify-content: center;
+    margin-left: 5px;
+    margin-right: 5px;
+}

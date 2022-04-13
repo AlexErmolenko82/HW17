@@ -21,7 +21,7 @@ const addItem = () => {
     let listItem = document.createElement('li');
     select.selectedIndex ? list.prepend(listItem) : list.append(listItem);
     listItem.className = "list_item";
-    listItem.innerHTML = input.value;
+    listItem.textContent = input.value;
 
     let inputCheckbox = document.createElement('input');
     listItem.prepend(inputCheckbox);
@@ -42,17 +42,17 @@ form.onsubmit = (event) => {
 
   if (input.value.trim().length === 0) {
     input.classList.add("error");
-    errorMessage.innerHTML = "ToDo field is required";
+    errorMessage.textContent = "ToDo field is required";
     return;
   }
   addItem();
 }
 
-input.onfocus = () => {
+input.onchange = () => {
   const isErrorField = input.classList.contains("error");
 if (isErrorField) {
       input.classList.remove("error");
-      errorMessage.innerHTML = "";
+      errorMessage.textContent = "";
     }
 }
 
@@ -65,8 +65,8 @@ container.addEventListener("click", (event) => {
 });
 
 container.addEventListener("change", (event) => {
-  const isCheckboxChange = event.target.classList.contains("checkbox");
-  if (isCheckboxChange) {
+  const isCheckboxChanged = event.target.classList.contains("checkbox");
+  if (isCheckboxChanged) {
     let markedItem = event.target.closest(".list_item");
     event.target.disabled = true;
     markedItem.querySelector(".delete_button").disabled = true;
@@ -76,7 +76,7 @@ container.addEventListener("change", (event) => {
 
 const showCountItems = () => {
   let count = document.querySelectorAll(".list_item").length;
-  title.innerHTML = `ToDo list (${count} items):`;
+  title.textContent = `ToDo list (${count} items):`;
 }
 
 showCountItems();

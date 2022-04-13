@@ -19,7 +19,6 @@ const addItem = () => {
 
     let listItem = document.createElement('li');
     select.selectedIndex ? list.prepend(listItem) : list.append(listItem);
-    // listItem.className = "list_item list-group-item d-flex justify-content-between";
     listItem.className = "list_item";
     listItem.innerHTML = input.value;
 

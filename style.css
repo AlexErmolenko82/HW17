@@ -2,11 +2,10 @@
     max-width: 800px;
     padding-top: 20px;
     font-size: 1.1em;
-
-    
+ 
 }
 
-.markedItem {
+.marked_item {
     text-decoration: line-through;
 }
 
@@ -15,7 +14,7 @@
 }
 
 form {
-    height: 40px;
+    height: 4em;
 }
 
 .bi-trash {

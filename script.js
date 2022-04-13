@@ -12,6 +12,7 @@ const form = document.forms.addItem;
 const input = form.input;
 const select = form.select;
 const button = form.querySelector("button");
+const title = document.querySelector(".title");
 const errorMessage = document.querySelector(".error_message");
 
 const addItem = () => {
@@ -64,18 +65,18 @@ container.addEventListener("click", (event) => {
 });
 
 container.addEventListener("change", (event) => {
-  const checkboxChange = event.target.classList.contains("checkbox");
-  if (checkboxChange) {
+  const isCheckboxChange = event.target.classList.contains("checkbox");
+  if (isCheckboxChange) {
     let markedItem = event.target.closest(".list_item");
-    markedItem.querySelector(".checkbox").disabled = true;
+    event.target.disabled = true;
     markedItem.querySelector(".delete_button").disabled = true;
-    markedItem.classList.toggle("markedItem");
+    markedItem.classList.toggle("marked_item");
     }
 });
 
 const showCountItems = () => {
   let count = document.querySelectorAll(".list_item").length;
-  document.querySelector(".title").innerHTML = `ToDo list (${count} items):`;
+  title.innerHTML = `ToDo list (${count} items):`;
 }
 
 showCountItems();
